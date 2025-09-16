@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Fest 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: white;
+      background: url("https://thumbs.dreamstime.com/b/raipur-india-students-walking-decorated-garden-cultural-fest-college-180075842.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Dark overlay across full page */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #fff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #f0f0f0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .event-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      transition: transform 0.2s;
+      aspect-ratio: 1 / 1; /* makes it square */
+      color: #333;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .event-card h2 {
+      color: #4b0082;
+      margin-top: 0;
+    }
+
+    .deadline {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: red;
+      margin: 10px 0;
+    }
+
+    a.register-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: #4b0082;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    a.register-btn:hover {
+      background: #6a0dad;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 Campus Fest 2025 🎉</h1>
+    <p>Join us for an exciting fest full of music, dance, games, and fun!</p>
+  </header>
+
+  <div class="container">
+    <!-- Group Dance -->
+    <div class="event-card">
+      <h2>💃🏻 Solo Dance & Group Dance</h2>
+      <p>Show your team’s moves and compete for the ultimate dance crown!</p>
+      <p class="deadline">Deadline: 25th September 2025</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScOUCEEF07JeyowQqngfPXgs2dL91Qeq8SUtw-aGPAPZ61zRg/viewform?usp=sharing&ouid=115633507539535139265" target="_blank" class="register-btn">Register</a>
+    </div>
+
+    <!-- Solo Dance / Solo Singing -->
+    <div class="event-card">
+      <h2>🎤 Solo Singing & Group Singing</h2>
+      <p>Dance or sing solo and shine like a star on stage!</p>
+      <p class="deadline">Deadline: 26th September 2025</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxpXl8XxjZKoxKdZ8s3fd-lI2S5tngXYH2VI2WPtVES3UGIA/viewform?usp=sharing&ouid=115633507539535139265" target="_blank" class="register-btn">Register</a>
+    </div>
+
+    <!-- E-Games -->
+    <div class="event-card">
+      <h2>🎮 E-Games</h2>
+      <p>PUBG, Valorant & more e-sports titles. Compete with gamers across campus!</p>
+      <p class="deadline">Deadline: 27th September 2025</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe2HvJX2smLKUjgEH0eRzkM9U5_zZT0n6iYwJFZu9WAJNrizQ/viewform?usp=sharing&ouid=115633507539535139265" target="_blank" class="register-btn">Register</a>
+    </div>
+
+    <!-- Board Games -->
+    <div class="event-card">
+      <h2>♟️ Board Games</h2>
+      <p>Unleash your strategy skills in chess, carrom, and other exciting board games.</p>
+      <p class="deadline">Deadline: 28th September 2025</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeUynKwWZEfNuci_getLseGjhhF7Xt8hJHb9DqR_FfTrQVJsA/viewform?usp=sharing&ouid=115633507539535139265" target="_blank" class="register-btn">Register</a>
+    </div>
+  </div>
+
+  <script>
+    // Hide register button if deadline passed
+    const deadlines = document.querySelectorAll(".deadline");
+    deadlines.forEach(deadline => {
+      let text = deadline.textContent;
+      let dateStr = text.replace("Deadline: ", "").trim();
+      let endDate = new Date(dateStr);
+
+      if (new Date() > endDate) {
+        deadline.textContent = "Registration Closed 🚫";
+        deadline.style.color = "gray";
+        deadline.nextElementSibling.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
